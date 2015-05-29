@@ -3,6 +3,7 @@
 @import "downstream/application";
 @import "downstream/mixin";
 @import "downstream/bootstrap_and_overrides";
+@import "downstream/patternfly";
 @import "downstream/colors";
 @import "downstream/topbar";
 @import "downstream/typography";
@@ -10,4 +11,3 @@
 @import "wizard";
 @import "katello-path-selector";
 @import "custom";
-@import "rcue-rdom";
