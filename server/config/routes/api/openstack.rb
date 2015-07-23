@@ -11,6 +11,7 @@ Fusor::Engine.routes.draw do
         resources :images
         get '/images/show_by_name/:name', to: 'images#show_by_name', as: 'images_show_by_name'
         resources :nodes
+        resources :underclouds
       end
     end
   end
