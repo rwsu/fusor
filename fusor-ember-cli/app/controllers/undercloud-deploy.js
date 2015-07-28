@@ -67,5 +67,27 @@ export default Ember.Controller.extend(DeploymentControllerMixin, {
   actions: {
     toggleShowAdvancedSettings: function() {
       this.set('showAdvancedSettings', !this.get('showAdvancedSettings'));
+    },
+
+    deployUndercloud: function() {
+	var deploy = this.get('model');
+	console.log('RWSU deployUndercloud');
+	console.log(deploy);
+	console.log(deploy.imagePath);
+//	Ember.$.ajax({
+//            url: '/fusor/api/openstack/underclouds',
+//            type: 'POST',
+//            contentType: 'application/json',
+//            success: function(response) {
+//  		console.log('SUCCESS');
+//		console.log(response);
+//            },
+//            error: function(error) {
+//		console.log('ERROR');
+//		console.log(error);
+//            }
+//	});
     }
-  }});
+  },
+
+});

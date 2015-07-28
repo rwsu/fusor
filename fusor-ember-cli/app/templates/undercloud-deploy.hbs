@@ -4,8 +4,13 @@
     <form class="form-horizontal" role="form">
 
       {{select-simple-f label="Deployment Mode"   labelSize='col-md-5' inputSize='col-md-5' content=deploymentModes selection=deploy.deploymentMode isRequired=true helpText=deploymentModeHelp}}
-      {{text-f label="Image Path" value=deploy.imagePath labelSize='col-md-5' inputSize='col-md-5' errors=errors isRequired=true helpText=imagePathHelp}}
-      {{text-f label="Local IP" value=deploy.localIP     labelSize='col-md-5' inputSize='col-md-5' errors=errors isRequired=true helpText=localIPHelp}}
+      {{text-f label="Image Path" valueBinding=model.imagePath labelSize='col-md-5' inputSize='col-md-5' errors=errors isRequired=true helpText=imagePathHelp}}
+      {{text-f label="Undercloud IP" valueBinding=deploy.undercloudIP     labelSize='col-md-5' inputSize='col-md-5' errors=errors isRequired=true helpText=undercloudIPHelp}}
+      {{text-f label="SSH User" value=deploy.sshUser     labelSize='col-md-5' inputSize='col-md-5' errors=errors isRequired=true helpText=sshUserHelp}}
+      {{text-f label="SSH Password" value=deploy.sshPassword     labelSize='col-md-5' inputSize='col-md-5' errors=errors isRequired=true helpText=sshPasswordHelp}}
+
+      <button class="btn btn-primary" {{action "deployUndercloud"}}>Deploy Undercloud</button>
+      
         <div class="panel-group" style="width:100%">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -49,6 +54,3 @@
                    nextRouteName='register-nodes'
                    disableNext=disableDeployUndercloudNext
                    parentController=controller}}
-
-
-
